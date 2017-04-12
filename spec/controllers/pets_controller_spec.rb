@@ -35,7 +35,7 @@ describe "Pets Controller" do
       fill_in "pet_name", :with => "Michael"
       check(@owner1.id)
       click_button "Create Pet"
-      @pet = Pet.last
+      @pet = Pet.all.last
       expect(@pet.name).to eq("Michael")
       expect(@pet.owner.name).to eq("Cricky")
     end
